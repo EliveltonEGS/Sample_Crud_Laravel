@@ -11,15 +11,27 @@
         <input type="hidden" name="id" value="{{ $product->id }}">
         <label>Name:</label>
         <input type="text" name="name" value="{{ $product->name }}" autocomplete="false">
+        @error('name')
+            <span>{{ $message }}</span>
+        @enderror
         <br>
         <label>EAN:</label>
         <input type="text" name="ean" value="{{ $product->ean }}" autocomplete="false">
+        @error('ean')
+            <span>{{ $message }}</span>
+        @enderror
         <br>
         <label>Amount:</label>
         <input type="text" name="amount" value="{{ $product->amount }}" autocomplete="false">
+        @error('amount')
+            <span>{{ $message }}</span>
+        @enderror
         <br>
         <label>Price:</label>
         <input type="text" name="price" value="{{ $product->price }}" autocomplete="false">
+        @error('price')
+            <span>{{ $message }}</span>
+        @enderror
         <br>
         <label>Category:</label>
         <select name="category_id">

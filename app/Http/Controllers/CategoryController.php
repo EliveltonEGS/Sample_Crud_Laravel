@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
-use Illuminate\Support\Facades\Date;
 
 class CategoryController extends Controller
 {
@@ -20,7 +20,7 @@ class CategoryController extends Controller
         return view('category.create')->with(['title' => 'Category Create']);
     }
 
-    public function store(Request $request): \Illuminate\Http\RedirectResponse
+    public function store(CategoryRequest $request): \Illuminate\Http\RedirectResponse
     {
         Category::create($request->all());
         return redirect()->route('category.index');
@@ -44,7 +44,7 @@ class CategoryController extends Controller
         return view('category.edit', compact('result'))->with(['title' => 'Category Update']);
     }
 
-    public function update(Request $request): \Illuminate\Http\RedirectResponse
+    public function update(CategoryRequest $request): \Illuminate\Http\RedirectResponse
     {
         Category::find($request->get('id'))->update(['name' => $request->get('name')]);
         return redirect()->route('category.index');
