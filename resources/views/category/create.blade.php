@@ -9,6 +9,10 @@
         @csrf
         <label>Name:</label>
         <input type="text" name="name" autocomplete="false">
+        @error('name')
+            <span>{{ $message }}</span>
+        @enderror
         <input type="submit" value="Save">
+        <a href="{{ route('category.index') }}">Cancel</a>
     </form>
 @endsection
