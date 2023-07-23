@@ -1,11 +1,12 @@
 @extends('template.template')
 
-@section('title', 'Category List')
+@section('title', $title)
 
 @section('content')
 <h1>{{ $title }}</h1>
 
     <a href="{{ route('category.create') }}">New</a>
+    <a href="{{ route('home.index') }}">Home</a>
     <table>
         <thead>
             <tr>

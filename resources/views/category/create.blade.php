@@ -1,6 +1,6 @@
 @extends('template.template')
 
-@section('title', 'Category Create')
+@section('title', $title)
 
 @section('content')
     <h1>{{ $title }}</h1>

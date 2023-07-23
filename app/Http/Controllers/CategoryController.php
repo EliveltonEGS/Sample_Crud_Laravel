@@ -20,7 +20,7 @@ class CategoryController extends Controller
         return view('category.create')->with(['title' => 'Category Create']);
     }
 
-    public function store(Request $request)
+    public function store(Request $request): \Illuminate\Http\RedirectResponse
     {
         Category::create($request->all());
         return redirect()->route('category.index');
@@ -32,7 +32,7 @@ class CategoryController extends Controller
         return view('category.delete', compact('result'))->with(['title' => 'Category Delete']);
     }
 
-    public function delete(Request $request)
+    public function delete(Request $request): \Illuminate\Http\RedirectResponse
     {
         Category::destroy($request->get('id'));
         return redirect()->route('category.index');
@@ -44,7 +44,7 @@ class CategoryController extends Controller
         return view('category.edit', compact('result'))->with(['title' => 'Category Update']);
     }
 
-    public function update(Request $request)
+    public function update(Request $request): \Illuminate\Http\RedirectResponse
     {
         Category::find($request->get('id'))->update(['name' => $request->get('name')]);
         return redirect()->route('category.index');
