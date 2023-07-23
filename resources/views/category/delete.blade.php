@@ -1,6 +1,6 @@
 @extends('template.template')
 
-@section('title', 'Category Create')
+@section('title', $title)
 
 @section('content')
     <h1>{{ $title }}</h1>
@@ -12,5 +12,6 @@
         <label>Name:</label>
         <input type="text" name="name" value="{{ $result->name }}" autocomplete="false" readonly>
         <input type="submit" value="Delete">
+        <a href="{{ route('category.index') }}">Cancel</a>
     </form>
 @endsection

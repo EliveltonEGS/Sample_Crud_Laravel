@@ -12,4 +12,8 @@ class Category extends Model
     protected $fillable = ['name'];
     public $timestamps = false;
 
+    public function products(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Product::class);
+    }
 }
