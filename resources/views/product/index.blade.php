@@ -3,10 +3,12 @@
 @section('title', $title)
 
 @section('content')
-<h1>{{ $title }}</h1>
+<h1 class="title">{{ $title }}</h1>
 
-<a href="{{ route('product.create') }}">New</a>
-<a href="{{ route('home.index') }}">Home</a>
+<div class="bts-navigation">
+    <a href="{{ route('product.create') }}">New</a>
+    <a href="{{ route('home.index') }}">Home</a>
+</div>
 <table>
     <thead>
         <tr>

@@ -3,7 +3,7 @@
 @section('title', $title)
 
 @section('content')
-    <h1>{{ $title }}</h1>
+    <h1 class="title">{{ $title }}</h1>
 
     <form action="{{ route('category.store') }}" method="post">
         @csrf
@@ -12,7 +12,7 @@
         @error('name')
             <span>{{ $message }}</span>
         @enderror
-        <input type="submit" value="Save">
-        <a href="{{ route('category.index') }}">Cancel</a>
+        <input class="btn-action" type="submit" value="Save">
+        <a class="btn-action" href="{{ route('category.index') }}">Cancel</a>
     </form>
 @endsection

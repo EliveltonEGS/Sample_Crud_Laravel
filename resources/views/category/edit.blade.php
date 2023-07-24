@@ -3,7 +3,7 @@
 @section('title', $title)
 
 @section('content')
-    <h1>{{ $title }}</h1>
+    <h1 class="title">{{ $title }}</h1>
 
     <form action="{{ route('category.update') }}" method="post">
         @csrf
@@ -11,7 +11,7 @@
         <input type="hidden" name="id" value="{{ $result->id }}">
         <label>Name:</label>
         <input type="text" name="name" value="{{ $result->name }}" autocomplete="false">
-        <input type="submit" value="Edit">
-        <a href="{{ route('category.index') }}">Cancel</a>
+        <input class="btn-action" type="submit" value="Edit">
+        <a class="btn-action" href="{{ route('category.index') }}">Cancel</a>
     </form>
 @endsection
