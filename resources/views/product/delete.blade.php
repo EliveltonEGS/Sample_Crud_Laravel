@@ -3,7 +3,7 @@
 @section('title', $title)
 
 @section('content')
-    <h1>{{ $title }}</h1>
+    <h1 class="title">{{ $title }}</h1>
 
     <form action="{{ route('product.delete') }}" method="post">
         @csrf
@@ -28,7 +28,7 @@
             @endforeach
         </select>
         <br>
-        <input type="submit" value="Delete">
-        <a href="{{ route('product.index') }}">Cancel</a>
+        <input class="btn-action" type="submit" value="Delete">
+        <a class="btn-action" href="{{ route('product.index') }}">Cancel</a>
     </form>
 @endsection
