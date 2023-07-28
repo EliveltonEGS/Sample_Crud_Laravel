@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('ean', 14);
             $table->integer('amount')->default(0);
             $table->decimal('price')->default(0.00);
-            $table->foreignIdFor(Category::class);
+            $table->bigInteger('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            //$table->foreignIdFor(Category::class);
             // $table->timestamps();
         });
     }
