@@ -16,12 +16,11 @@ class UpdateProductDTO
 
     public static function makeFromRequest(ProductRequest $request): self
     {
-        $price = (float) $request->price;
         return new self(
             $request->name,
             $request->ean,
             $request->amount,
-            (float) $price,
+            (float) $request->price,
             $request->category_id
         );
     }
